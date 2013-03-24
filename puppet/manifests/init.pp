@@ -26,7 +26,6 @@ class apache {
 }
 
 apache_httpd { 'prefork':
-    ssl => true,
     modules => [
         'auth_basic',
         'mime',
@@ -37,5 +36,5 @@ apache_httpd { 'prefork':
     # welcome => false,
 }
 
-# php::module { [ 'pecl-apc', 'xml' ]: }
+php::module { [ 'pecl-apc', 'xml' ]: }
 
