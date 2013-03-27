@@ -12,6 +12,14 @@ class { 'yum':
     extrarepo => ['epel', 'remi']
 }
 
+Firewall {
+  require => Class['my_fw::pre']
+}
+
+class { ['my_fw::pre']: }
+
+class { 'firewall': }
+
 class apache {
     package { 'httpd':
         name => 'httpd',

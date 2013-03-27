@@ -16,3 +16,6 @@
 [submodule "UpdatedPHP"]
 	path = puppet/modules/php
 	url = https://github.com/thias/puppet-php.git
+[submodule "puppet/modules/firewall"]
+	path = puppet/modules/firewall
+	url = https://github.com/puppetlabs/puppetlabs-firewall.git
