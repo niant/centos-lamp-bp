@@ -20,6 +20,10 @@ class { ['my_fw::pre']: }
 
 class { 'firewall': }
 
+apache_httpd::file { 'localhost.conf':
+    source => '/vagrant/puppet/site.conf',
+}
+
 class apache {
     package { 'httpd':
         name => 'httpd',
@@ -43,6 +47,8 @@ apache_httpd { 'prefork':
     ]
     # welcome => false,
 }
+
+class { 'mysql': }
 
 php::module { [ 'pecl-apc', 'xml' ]: }
 
