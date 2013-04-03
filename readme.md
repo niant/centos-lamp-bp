@@ -14,7 +14,7 @@ This is a boilerplate CentOS virtual server (LAMP) for Vagrant setup.
 
     rm -rf .git/
 
-Move files into LAMP project directory
+Move files (Vagrantfile & puppet directory) into LAMP project directory
 
 ## Usage
 
