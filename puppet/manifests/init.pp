@@ -48,7 +48,26 @@ apache_httpd { 'prefork':
     # welcome => false,
 }
 
+php::ini { '/etc/php.ini':
+    display_errors => 'On',
+    memory_limit   => '256M',
+    date_timezone  => 'Europe/Helsinki'
+}
+
+class { 'mysql::server':
+    config_hash => { 'root_password' => 'root' }
+}
+
+# DB for the application
+# mysql::db { 'database_name':
+#     user     => 'user',
+#     password => 'password',
+#     host     => 'localhost',
+#     grant    => ['all'],
+# }
+
+
 class { 'mysql': }
 
-php::module { [ 'pecl-apc', 'xml' ]: }
+php::module { [ 'pecl-apc', 'pdo', 'mysql' ]: }
 
