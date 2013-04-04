@@ -48,6 +48,10 @@ apache_httpd { 'prefork':
     # welcome => false,
 }
 
+class { 'php::mod_php5': }
+
+include php::cli
+
 php::ini { '/etc/php.ini':
     display_errors => 'On',
     memory_limit   => '256M',
