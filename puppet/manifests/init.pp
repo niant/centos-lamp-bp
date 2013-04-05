@@ -43,7 +43,11 @@ apache_httpd { 'prefork':
         'mime',
         'dir',
         'alias',
-        'rewrite'
+        'rewrite',
+        'env',
+        'headers',
+        'expires',
+        'cache'
     ]
     # welcome => false,
 }
